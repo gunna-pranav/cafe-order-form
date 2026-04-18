@@ -63,6 +63,28 @@ h1 {
   color: var(--muted);
 }
 
+.form-heading-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.reset-order-btn {
+  margin-top: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.45rem 0.75rem;
+  background: #fff;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reset-order-btn:hover {
+  background: #f8f1e8;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -187,21 +209,31 @@ button:disabled {
 
 .drink-details {
   display: grid;
-  gap: 0.5rem;
-  margin-top: 0.6rem;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
 }
 
 .drink-detail-row {
-  border-top: 1px dashed var(--border);
-  padding-top: 0.55rem;
+  border: 1px solid #e6d8ca;
+  border-radius: 12px;
+  padding: 0.95rem;
+  background: #fcf8f3;
+  display: grid;
+  gap: 1.1rem;
 }
 
 .drink-detail-label {
-  display: inline-block;
-  margin-bottom: 0.3rem;
-  font-size: 0.88rem;
+  display: block;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
   color: var(--muted);
   text-transform: capitalize;
+  font-weight: 600;
+}
+
+.drink-detail-row select {
+  width: min(100%, 320px);
 }
 
 .slide-down {
@@ -226,6 +258,97 @@ button:disabled {
 
 .order-summary p {
   margin: 0;
+}
+
+.confirmation-card {
+  max-width: 620px;
+}
+
+.confirmation-panel {
+  border: 1px solid #e1d2c2;
+  border-radius: 14px;
+  background: #fff8f0;
+  padding: 1rem;
+  margin-top: 0.4rem;
+}
+
+.confirmation-message {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.confirmation-customer {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+}
+
+.confirmation-detail {
+  margin: 0;
+  color: var(--muted);
+}
+
+.order-breakdown {
+  margin-top: 0.85rem;
+  border-top: 1px dashed #dccbb9;
+  padding-top: 0.85rem;
+}
+
+.order-breakdown-title {
+  margin: 0 0 0.55rem;
+  font-weight: 700;
+}
+
+.order-breakdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.order-breakdown-item {
+  border: 1px solid #e6d8ca;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: #fff;
+}
+
+.order-breakdown-line {
+  margin: 0;
+}
+
+.order-breakdown-line + .order-breakdown-line {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.confirmation-action-btn {
+  width: 100%;
+  margin-top: 0.95rem;
+  border: 0;
+  border-radius: 12px;
+  padding: 0.82rem 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  cursor: pointer;
+  text-align: center;
+}
+
+.confirmation-action-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.confirmation-action-group {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.95rem;
+}
+
+.confirmation-action-group .confirmation-action-btn {
+  margin-top: 0;
 }
 
 .home-link {
