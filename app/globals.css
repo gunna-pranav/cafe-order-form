@@ -1,0 +1,251 @@
+:root {
+  --bg: #f6efe6;
+  --surface: #fffdf8;
+  --text: #1f1b17;
+  --muted: #6a6159;
+  --accent: #a35d2d;
+  --accent-strong: #864a21;
+  --border: #d8ccbe;
+  --success: #1e6b38;
+  --error: #8f1d1d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, #f4d9be 0, rgba(244, 217, 190, 0) 40%),
+    radial-gradient(circle at 85% 80%, #e9c6a4 0, rgba(233, 198, 164, 0) 35%),
+    var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  min-height: 100dvh;
+  padding: 2rem 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: min(100%, 660px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 40px rgba(65, 38, 19, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+}
+
+.subtext {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.72rem 0.8rem;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #eec29f;
+  border-color: #cd9368;
+}
+
+button {
+  margin-top: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.68;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.status.success {
+  color: var(--success);
+}
+
+.status.error {
+  color: var(--error);
+}
+
+.drink-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.drink-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  padding: 0.8rem;
+}
+
+.drink-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.drink-name {
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.counter-btn {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 0;
+  background: #fff;
+  color: var(--text);
+}
+
+.counter-btn:hover {
+  background: #f8f1e8;
+}
+
+.counter-value {
+  min-width: 1.4rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.drink-details {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.drink-detail-row {
+  border-top: 1px dashed var(--border);
+  padding-top: 0.55rem;
+}
+
+.drink-detail-label {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-transform: capitalize;
+}
+
+.slide-down {
+  animation: slide-down-fade 0.2s ease;
+}
+
+@keyframes slide-down-fade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-summary {
+  color: var(--muted);
+  margin-top: -0.15rem;
+}
+
+.order-summary p {
+  margin: 0;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  .card {
+    padding: 1.75rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field.full {
+    grid-column: 1 / -1;
+  }
+}
